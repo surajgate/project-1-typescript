@@ -6,6 +6,7 @@ import {
   Card,
   Container,
   Divider,
+  Paper,
   Typography
 } from "@mui/material";
 import data from "../data/data";
@@ -24,24 +25,26 @@ function App() {
           alignItems: "center",
         }}
       >
-        <Card
+        <Paper
           sx={{
             m: 4,
             p: 2,
-            // width:'30%'
           }}
         >
           <Typography letterSpacing={3} fontSize={26} variant="h3" gutterBottom>
             {peoples.length} birthdays today !
           </Typography>
-          <Divider sx={{m : 2}}></Divider>
+          <Divider sx={{ m: 2 }}></Divider>
           {boolean ? <List /> : ""}
           <Box sx={{ display: "flex", justifyContent: "center" }}>
             <Button
               sx={{
                 m: 2,
                 backgroundColor: "#f28ab2",
-                width: '100%'
+                width: "100%",
+                "&:hover": {
+                  backgroundColor: "#f28ab2",
+                },
               }}
               variant="contained"
               onClick={() => {
@@ -52,7 +55,7 @@ function App() {
               Clear All
             </Button>
           </Box>
-        </Card>
+        </Paper>
 
         {/* <section className="container">
         <h3>{peoples.length} birthdays today</h3>
