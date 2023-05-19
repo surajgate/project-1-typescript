@@ -1,22 +1,18 @@
-import React from "react";
-import data from "../data/data";
 import {
-  Container,
   CardMedia,
-  Card,
-  Typography,
-  Button,
-  CardHeader,
+  Container,
   Grid,
+  Typography
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import data from "../data/data";
 
 console.log(data);
 
 const useStyles = makeStyles({
   image: {
     width: "75px",
-    height: "75px",
+    height: "85px",
     objectFit: "cover",
     borderRadius: "50%",
   },
@@ -31,18 +27,17 @@ const List = () => {
         const { id, name, age, image } = person;
         return (
           <>
-            <Grid container sx={{ m: 1 }}>
+            <Grid key={id} container sx={{ m: 1 }}>
               <Grid direction="row" xs={3}>
                 <CardMedia
                   className={classes.image}
-                  sx={{ width: "100px", height: "100px" }}
                   component="img"
                   image={image}
                 />
               </Grid>
               <Grid xs={9}>
                 <Container>
-                  <Typography variant="h4">{name}</Typography>
+                  <Typography letterSpacing={1} fontWeight={'bold'} variant="h6">{name}</Typography>
                   <Typography paragraph gutterBottom>
                     {age}
                   </Typography>

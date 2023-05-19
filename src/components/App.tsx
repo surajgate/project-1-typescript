@@ -1,15 +1,15 @@
 import { useState } from "react";
 // import List, { PeopleType } from "./List";
+import {
+  Box,
+  Button,
+  Card,
+  Container,
+  Divider,
+  Typography
+} from "@mui/material";
 import data from "../data/data";
 import List from "./List";
-import {
-  Container,
-  Card,
-  Typography,
-  Button,
-  CardHeader,
-  Box,
-} from "@mui/material";
 
 function App() {
   const [boolean, setBoolean] = useState<boolean>(true);
@@ -26,25 +26,32 @@ function App() {
       >
         <Card
           sx={{
-            m: 1,
+            m: 4,
+            p: 2,
+            // width:'30%'
           }}
         >
-          <Typography variant="h3" gutterBottom>
-            {peoples.length} birthdays today
+          <Typography letterSpacing={3} fontSize={26} variant="h3" gutterBottom>
+            {peoples.length} birthdays today !
           </Typography>
+          <Divider sx={{m : 2}}></Divider>
           {boolean ? <List /> : ""}
-          <Button
-            sx={{
-              m: 2,
-            }}
-            variant="contained"
-            onClick={() => {
-              setBoolean(false);
-              setPeoples([]);
-            }}
-          >
-            Clear All
-          </Button>
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <Button
+              sx={{
+                m: 2,
+                backgroundColor: "#f28ab2",
+                width: '100%'
+              }}
+              variant="contained"
+              onClick={() => {
+                setBoolean(false);
+                setPeoples([]);
+              }}
+            >
+              Clear All
+            </Button>
+          </Box>
         </Card>
 
         {/* <section className="container">
